@@ -12,14 +12,14 @@ public class ConsumerAPI {
     private final HttpClient client = HttpClient.newHttpClient();
     private HttpResponse<String> response = null;
     private HttpRequest request = null;
-    private final String URL_BASE = "https://gutendex.com/books/";
+    private final String URL_BASE = "https://gutendex.com/";
 
-    public String getJsonData(String URL_PATH) {
+    public String getJsonData(String endpoint) {
 
         try {
 
             request = HttpRequest.newBuilder()
-                    .uri(new URI(URL_PATH))
+                    .uri(new URI(URL_BASE + endpoint))
                     .build();
 
             response = client.send(request, HttpResponse.BodyHandlers.ofString());

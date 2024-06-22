@@ -12,9 +12,7 @@ public class App {
 
     private void runAppplication() {
 
-        System.out.println(
-                this.CONSUMER_API.getJsonData(
-                        "https://gutendex.com/books/"));
+        System.out.println(CONSUMER_API.getJsonData("books/"));
 
     }
 
